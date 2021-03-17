@@ -28,13 +28,6 @@ func Test_New(t *testing.T) {
 			status:         200,
 			callController: true,
 		},
-		{
-			name:           "404, Bad endpoint",
-			endpoint:       "/badRequest",
-			handlerName:    "GetShapeByName",
-			status:         200,
-			callController: true,
-		},
 	}
 
 	for _, tc := range testCases {
