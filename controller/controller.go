@@ -47,31 +47,9 @@ func (c *Controller) GetShapeByName(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		logger.WithError(err).Error("getting shape")
 
-		c.render.Text(w, http.StatusNotFound, "Shape not found")
+		c.render.Text(w, 200, "Shape not found")
 		return
 	}
 
-	c.render.Text(w, http.StatusOK, body)
+	c.render.Text(w, 200, body)
 }
-
-// SetShapeName logic in controller
-// func (c *Controller) SetShapeName(w http.ResponseWriter, r *http.Request) {
-// 	shapeName := mux.Vars(r)["shape_name"]
-
-// 	logger := c.logger.WithFields(logrus.Fields{
-// 		"func":       "Set Shape Name",
-// 		"shape_name": shapeName,
-// 	})
-// 	logger.Debug("in")
-
-// 	body, err := c.useCase.SetShapeName(shapeName)
-
-// 	if err != nil {
-// 		logger.WithError(err).Error("setting shape name")
-
-// 		c.render.JSON(w, http.StatusNotFound, "Shape not found")
-// 		return
-// 	}
-
-// 	c.render.JSON(w, http.StatusOK, body)
-// }

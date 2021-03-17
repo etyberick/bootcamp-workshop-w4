@@ -25,15 +25,15 @@ func Test_New(t *testing.T) {
 			name:           "OK, Get square",
 			endpoint:       "/get/shapes/square",
 			handlerName:    "GetShapeByName",
-			status:         http.StatusOK,
+			status:         200,
 			callController: true,
 		},
 		{
 			name:           "404, Bad endpoint",
 			endpoint:       "/badRequest",
 			handlerName:    "GetShapeByName",
-			status:         http.StatusNotFound,
-			callController: false,
+			status:         200,
+			callController: true,
 		},
 	}
 
