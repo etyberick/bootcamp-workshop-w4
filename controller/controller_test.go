@@ -1,7 +1,6 @@
 package controller
 
 import (
-	"errors"
 	"testing"
 
 	"github.com/varopxndx/bootcamp-workshop-w4/controller/mocks"
@@ -32,15 +31,6 @@ func Test_Controller(t *testing.T) {
 			expectUsecaseCall:       true,
 			wantError:               false,
 			expectedError:           nil,
-		},
-		//Create scenario for 404
-		{
-			name:                    "404 - Not Found",
-			expectedParams:          "squares",
-			expectedUsecaseResponse: "Not Found",
-			expectUsecaseCall:       true,
-			wantError:               true,
-			expectedError:           errors.New("Not found"),
 		},
 	}
 	for _, tt := range tests {
